@@ -109,6 +109,7 @@ func newStatefulSetForNFSServer(cr *nfsv1alpha1.NFSServer) *appsv1.StatefulSet {
 										"DAC_READ_SEARCH",
 									},
 								},
+								Privileged: &privilaged,
 							},
 						},
 						{

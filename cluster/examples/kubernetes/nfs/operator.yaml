@@ -118,8 +118,8 @@ spec:
       serviceAccountName: rook-nfs-operator
       containers:
       - name: rook-nfs-operator
-        image: rook/nfs:master
-        imagePullPolicy: IfNotPresent
+        image: ahmadnurus/rook-nfs:sidecar-provisioner
+        imagePullPolicy: Always
         args: ["nfs", "operator"]
         env:
         - name: POD_NAME

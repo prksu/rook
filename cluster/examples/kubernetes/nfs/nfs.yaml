@@ -55,7 +55,7 @@ metadata:
   name: run-nfs-provisioner
 subjects:
   - kind: ServiceAccount
-    name: rook-nfs-provisioner
+    name: rook-nfs-server
      # replace with namespace where provisioner is deployed
     namespace: rook-nfs
 roleRef:
@@ -71,10 +71,11 @@ metadata:
   namespace: rook-nfs
 spec:
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
+  storageClassName: "standard-xfs"
 ---
 apiVersion: nfs.rook.io/v1alpha1
 kind: NFSServer

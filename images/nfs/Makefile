@@ -19,7 +19,7 @@ include ../image.mk
 
 NFS_IMAGE = $(BUILD_REGISTRY)/nfs-$(GOARCH)
 
-NFS_BASE ?= ubuntu:xenial
+NFS_BASE ?= ubuntu:bionic
 
 ifeq ($(GOARCH),amd64)
 NFS_BASEIMAGE = $(NFS_BASE)
